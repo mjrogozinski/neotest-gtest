@@ -4,7 +4,7 @@ local plugins = { "plenary.nvim", "nvim-dap", "nvim-treesitter", "neotest", "nvi
 
 vim.notify = print
 vim.opt.swapfile = false
-vim.opt.rtp:append(".")
+vim.opt.rtp:append(".,..,../..,../../../,../../../../")
 for _, plugin in ipairs(plugins) do
   vim.opt.rtp:append(lazypath .. "/" .. plugin)
 end

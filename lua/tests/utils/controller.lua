@@ -11,7 +11,7 @@ local Path = require("plenary.path")
 local M = {}
 
 local function integration_tests_path()
-  return Path:new(debug.getinfo(2, "S").source:sub(2)):parent():parent()
+  return Path:new(debug.getinfo(2, "S").source:sub(2)):parent():parent():parent()
 end
 
 ---@class neotest-gtest.IntegrationTestsController
@@ -31,7 +31,7 @@ function TestsController:new()
     _results_recorder = recorders.results:new(),
     _specs_recorder = recorders.specs:new(),
   }
-  state.cpp_root = state.project_root .. "/tests/integration/cpp"
+  state.cpp_root = state.project_root .. "/lua/tests/integration/cpp"
   state.adapter_id = "neotest-gtest:" .. state.project_root
   setmetatable(state, { __index = self })
   return state
